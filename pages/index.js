@@ -5,16 +5,19 @@ import Header from './components/Header'
 
 export default function Home() {
   return (
-    <div className={style.main}>
+    <div className="xcontainer">
       <Head>
         <title>My Cool App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <main>
-        <h1 className={style.main}>
-          Welcome to my App
-        </h1>
-        <Header />
+        <div className={style.main}>        
+          <Header />
+          <h1 className="title">
+            Welcome to my App
+          </h1>
+        </div>
       </main>
     </div>
   )

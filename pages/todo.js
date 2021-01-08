@@ -5,16 +5,18 @@ import Header from './components/Header'
 
 export default function Todo() {
   return (
-    <div className={style.main}>
+    <div className="xcontainer">
       <Head>
         <title>My Cool App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1 className={style.main}>
-          My Todo List
-        </h1>
-        <Header />
+        <div className={style.main}>
+          <Header />
+          <h1 className="title">
+            My Todo List
+          </h1>
+        </div>
       </main>
     </div>
   )

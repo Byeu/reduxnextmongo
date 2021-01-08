@@ -9,21 +9,26 @@ function Weather(props) {
   const { userInfo, setInfo } = props;
   const [ name, setName] = useState ("");
   return (
-    <div className="container">
+    <div className="xcontainer">
       <Head>
         <title>The Weather</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
         <div className={style.main}>
+          <Header />
           <h1 className="title">
            Today is Fine for { userInfo.name }
           </h1>
-          <Header />
-          <input name="name" 
+          <input 
+            name="name" 
             value={name} 
-            onChange={(e) => setName(e.target.value)}/>
-          <button onClick={() => setInfo(name)}>Submit</button>
+            onChange={(e) => setName(e.target.value)}
+            />
+          <button 
+            onClick={() => setInfo(name)}>
+              Submit
+          </button>
         </div>
       </main>
     </div>
