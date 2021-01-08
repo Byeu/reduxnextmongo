@@ -1,0 +1,2 @@
+# reduxnextmongo
+base next
