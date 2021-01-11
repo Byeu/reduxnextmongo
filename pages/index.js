@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import style from "../style/index.less"
-import Link from 'next/link'
 import Header from './components/Header'
 
 export default function Home() {

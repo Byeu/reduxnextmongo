@@ -14,7 +14,7 @@ const connect = async () => {
             useUnifiedTopology: true
         });
 
-        console.log("data saved")
+        console.log("connected to database")
     } catch (e) {
         console.log(`an error occured ${e.message}`)
     }

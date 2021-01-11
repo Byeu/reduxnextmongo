@@ -1,6 +1,6 @@
-import {  Form, Button, Modal} from 'react-bootstrap'
+import {  Form, Button, Modal, Alert} from 'react-bootstrap'
 
-const SignIn = ({ show, setShow, form, setFormValue }) => {
+const Login = ({ show, setShow, form, setFormValue, signIn, isLoading, error }) => {
 
     return (
       <>
@@ -9,6 +9,11 @@ const SignIn = ({ show, setShow, form, setFormValue }) => {
             <Modal.Title>LogIn to your Account</Modal.Title>
           </Modal.Header>
           <Modal.Body>
+          {error &&
+            <Alert variant='danger'>
+              {error}
+            </Alert>
+          }
           <Form>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
@@ -32,8 +37,11 @@ const SignIn = ({ show, setShow, form, setFormValue }) => {
             <Button variant="secondary" onClick={() => setShow(false)}>
               Cancel
             </Button>
-            <Button variant="primary">
-              Sign In
+            <Button 
+            variant="primary"
+            onClick={() => signIn()}
+            disabled={isLoading}>
+              {isLoading ? '...loading' : 'Sign In'}
             </Button>
           </Modal.Footer>
         </Modal>
@@ -41,4 +49,4 @@ const SignIn = ({ show, setShow, form, setFormValue }) => {
     )
   }
 
-  module.exports = SignIn;
+export default Login;
