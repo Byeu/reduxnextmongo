@@ -3,7 +3,8 @@ import * as t from "../types";
 const main = (state = {
         name: "guest",
         loading: false,
-        error: null
+        error: null,
+        todos: []
 }, action) => {
     switch (action.type) {
         case t.SET_NAME:
@@ -37,7 +38,26 @@ const main = (state = {
                 ...state,
                 error: action.payload
             };
-
+            case t.GET_TODOS:
+            return { 
+                ...state,
+                todos: action.payload
+            };
+            case t.CREATE_TODO:
+            return { 
+                ...state,
+                todos: state.todos.concat(action.payload)
+            };
+            case t.UPDATE_TODOS:
+            return { 
+                ...state,
+                todos: action.payload
+            };
+            case t.DELETE_TODO:
+            return { 
+                ...state,
+                todos: action.payload
+            };
 
         default:
             return {...state};

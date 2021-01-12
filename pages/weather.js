@@ -15,7 +15,7 @@ function Weather(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className={style.main}>
+        <div className="main">
           <Header />
           <h1 className="title">
            Today is Fine for { userInfo.name }
