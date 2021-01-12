@@ -51,7 +51,7 @@ function Todo(props) {
               + Add Todo
           </Button>
           {
-            todos.length > 0 ? 
+            todos && todos.length > 0 ? 
             todos.map((todo,i) => 
           <ListGroup horizontal key={i} className="mt-2">
             <ListGroup.Item>{todo.title}</ListGroup.Item>
